@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import "../styles.css";
 import { reportRuntimeError } from "../lib/error-reporting";
 
 function NotFoundComponent() {
