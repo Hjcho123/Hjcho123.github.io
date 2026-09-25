@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/about")({
@@ -59,7 +59,7 @@ function About() {
               <p>
                 I have a lot of different interests, but speaking to my academic and
                 professional pursuits, I'm particularly drawn to mathematics,
-                machine learning, and quantitative trading. You can find examples of my work in these areas in the <a href="/projects" className="underline underline-offset-4">selected projects</a> section of this website. 
+                machine learning, and quantitative trading. You can find examples of my work in these areas in the <Link to="/projects" className="underline underline-offset-4">selected projects</Link> section of this website.
               </p>
               <p>
                 Outside of that, I like to spend my time reading, running, weight lifting, hiking, playing chess and sketching. I also probably type way faster than you.

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { FieldFilterMenu, useFieldFilter } from "@/components/FieldFilter";
 import { projects } from "@/lib/projects";
@@ -53,8 +53,8 @@ function Projects() {
 
         <div className="mt-8 border-2 border-border bg-white px-6 py-1 sm:px-10">
           {fieldFilter.filteredItems.map((p) => (
-            <a
-              href={`/project/${p.slug}`}
+            <Link
+              to={`/project/${p.slug}`}
               key={p.no}
               className="grid gap-3 border-b-2 border-border py-7 last:border-b-0 sm:grid-cols-[3rem_minmax(0,1fr)_8rem] sm:items-baseline sm:gap-8"
             >
@@ -66,7 +66,7 @@ function Projects() {
               <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
                 {p.field}
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
