@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @source "../src";
@@ -30,7 +30,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Libre Baskerville", Georgia, serif;
+  --font-display: "Noto Serif KR", "Libre Baskerville", Georgia, serif;
   --font-sans: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
   --font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
   --shadow-panel: none;
