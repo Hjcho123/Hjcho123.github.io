@@ -24,13 +24,13 @@ export const Route = createFileRoute("/cv")({
 
 const experience = [
   {
-    range: "2025—NOW",
+    range: "2025—2026",
     role: "Information Technology Intern",
     org: "HKUST IT Office",
     body: "Managing computer laboratories and supporting students and staff with hardware, printing, ID card, and general IT issues.",
   },
   {
-    range: "2025—NOW",
+    range: "2025—2026",
     role: "Software Developer",
     org: "Google Developer Student Club · HKUST",
     body: "Contributing to team software projects across web and app development using JavaScript, Python, and Flutter.",
@@ -69,7 +69,7 @@ function CV() {
               Cho
             </h1>
             <div className="mt-10 space-y-1 border-l border-accent pl-5 text-sm text-muted-foreground">
-              <p>Mathematics · Computer Science track</p>
+              <p>BSc Mathematics with an Extension in AI</p>
               <p>Hong Kong University of Science and Technology</p>
               <a
                 href="mailto:hjchoaa@connect.ust.hk"
@@ -81,10 +81,9 @@ function CV() {
           </div>
 
           <div className="max-w-sm lg:mt-40">
-            <p className="label">Profile field</p>
+            <p className="label">Profile</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              The full-scale figure is assembled from changing typographic marks—a human silhouette
-              held inside a computational field.
+              Interested in roles related to software development, data science, machine learning, and quantitative trading.
             </p>
           </div>
         </div>
@@ -112,9 +111,9 @@ function CV() {
           <p className="label lg:pt-4">Education & languages</p>
           <div className="grid border-t-2 border-border sm:grid-cols-2 sm:divide-x-2 sm:divide-border">
             <div className="border-b-2 border-border py-7 sm:pr-8">
-              <h2 className="display text-2xl">HKUST · 2024—2028</h2>
+              <h2 className="display text-2xl">HKUST · 2024—2030</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                BSc Mathematics, Computer Science track and Artificial Intelligence.
+                BSc Mathematics with an Extension inArtificial Intelligence.
               </p>
             </div>
             <div className="border-b-2 border-border py-7 sm:pl-8">
