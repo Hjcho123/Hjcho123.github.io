@@ -1,7 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { FieldFilterMenu, useFieldFilter } from "@/components/FieldFilter";
-import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -26,8 +24,6 @@ export const Route = createFileRoute("/projects")({
 });
 
 function Projects() {
-  const fieldFilter = useFieldFilter(projects);
-
   return (
     <SiteLayout pathLabel="./home/heejae/archive/projects">
       <section className="mx-auto max-w-6xl px-6 py-24">
@@ -46,28 +42,12 @@ function Projects() {
           </dl>
         </div>
 
-        <div className="mt-16 flex items-baseline justify-between border-b-2 border-border pb-4">
-          <p className="label">Archive / 2025</p>
-          <FieldFilterMenu {...fieldFilter} allLabel="All projects" />
-        </div>
-
-        <div className="mt-8 border-2 border-border bg-white px-6 py-1 sm:px-10">
-          {fieldFilter.filteredItems.map((p) => (
-            <Link
-              to={`/project/${p.slug}`}
-              key={p.no}
-              className="grid gap-3 border-b-2 border-border py-7 last:border-b-0 sm:grid-cols-[3rem_minmax(0,1fr)_8rem] sm:items-baseline sm:gap-8"
-            >
-              <span className="font-mono text-xs text-accent">{p.no}</span>
-              <div className="flex-1">
-                <h2 className="display text-3xl">{p.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground">{p.detail}</p>
-              </div>
-              <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
-                {p.field}
-              </span>
-            </Link>
-          ))}
+        <div className="mt-16 border-2 border-border bg-white p-6 sm:p-10">
+          <p className="label">Archive / paused</p>
+          <h2 className="display mt-4 text-2xl sm:text-3xl">No projects published yet.</h2>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            The project archive is being prepared. Existing project material is stored privately for now.
+          </p>
         </div>
       </section>
     </SiteLayout>
