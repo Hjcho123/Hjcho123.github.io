@@ -34,12 +34,15 @@ jobs:
         run: npm run build
 
       - name: Make Pages entrypoint
-        run: cp dist/client/_shell.html dist/client/index.html
+        run: |
+          cp dist/client/_shell.html dist/client/index.html
+          touch dist/client/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/client
+          include-hidden-files: true
 
   deploy:
     environment:
