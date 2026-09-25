@@ -65,6 +65,7 @@
     border-color: var(--color-border);
     border-radius: 0 !important;
     box-sizing: border-box;
+    min-width: 0;
   }
 
   ::selection {
@@ -88,6 +89,9 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    hyphens: none;
   }
 
   a {
