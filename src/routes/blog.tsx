@@ -31,7 +31,7 @@ function Blog() {
           <h1 className="page-title mt-7">blog</h1>
           <div className="title-rule mt-10" />
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            An online diary of thoughts across my academic and professional interests, as well as my personal life.
+            An online diary and study log.
           </p>
         </div>
 

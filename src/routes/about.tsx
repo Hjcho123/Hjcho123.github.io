@@ -73,8 +73,8 @@ function About() {
 
               <p>
                 I have a lot of different interests, but speaking to my
-                academic and professional pursuits, I'm particularly drawn to
-                mathematics, machine learning, and quantitative trading. You
+                academic and professional pursuits, I specialize in
+                machine learning, software development, and quantitative trading. You
                 can find examples of my work in these areas in the{" "}
                 <Link
                   to="/projects"
@@ -88,12 +88,12 @@ function About() {
               <p>
                 Outside of that, I like to spend my time reading, running,
                 weight lifting, hiking, playing chess and sketching. I also
-                probably type way faster than you.
+                probably type faster than you.
               </p>
 
               <p>
                 I am currently based in Hong Kong and Seoul. I was born and
-                raised in Manila, The Philippines.
+                raised in Manila, the Philippines.
               </p>
             </div>
           </div>

@@ -29,7 +29,7 @@ function MonthlyMusicRecommendation() {
     <SiteLayout pathLabel="./home/heejae/archive/monthly_music_recommendation">
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-24">
         <div className="title-block pt-8">
-          <p className="label break-words">./home/heejae/archive/monthly_music_recommendation</p>
+          <p className="label break-words">./home/heejae/miscellaneous/monthly_music_recommendation</p>
           <h1 className="page-title mt-6 max-w-full break-words sm:mt-7">monthly_music_recommendation</h1>
           <div className="title-rule mt-8 sm:mt-10" />
         </div>

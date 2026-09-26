@@ -91,9 +91,8 @@ function Index() {
           
           <p className="mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
             {[
-              "mathematics",
-              "artificial intelligence",
-              "quantitative trading",
+              "navigate using the directory below ",
+            
             ].map((interest, index) => (
               <span key={interest} className="inline-flex items-center gap-3">
                 {index > 0 && <span aria-hidden="true">·</span>}

@@ -32,13 +32,12 @@ function Projects() {
           <h1 className="page-title mt-7">selected_projects</h1>
           <div className="title-rule mt-10" />
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            A growing collection of personal work used to explore fundamental ideas in mathematics,
-            data science, deep learning, and quantitative trading.
+            Projects I've worked on in the past or currently in the present are found here. You can filter projects by subject too.
           </p>
           <dl className="mt-8 grid gap-1 font-mono text-xs text-muted-foreground">
-            <div>field: computational terrain</div>
-            <div>status: work in progress</div>
-            <div>range: 2025—</div>
+            <div>fields: machine learning, quantitative finance, software development</div>
+            <div>status: in development</div>
+            <div>range: 2025—present</div>
           </dl>
         </div>
 
