@@ -156,6 +156,10 @@ function Index() {
                   ]}
                 />
 
+                <div className="directory-divider" aria-hidden="true">
+                  {"=".repeat(128)}
+                </div>
+
                 <Link
                   to="/cv"
                   className="directory-entry directory-root-link directory-symlink"
