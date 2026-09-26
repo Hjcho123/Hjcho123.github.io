@@ -85,8 +85,8 @@
   body {
     margin: 0;
     background-color: var(--color-background);
-    background-image: repeating-conic-gradient(#acacaca4 0% 25%, transparent 0% 50%);
-    background-size: 2px 3px;
+    background-image: repeating-conic-gradient(#e7e6e6 0% 25%, transparent 0% 50%);
+    background-size: 100px 3px;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;

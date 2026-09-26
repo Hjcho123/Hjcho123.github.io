@@ -13,7 +13,8 @@ export const Route = createFileRoute("/cv")({
       { property: "og:title", content: "CV — Hee Jae Cho" },
       {
         property: "og:description",
-        content: "Experience, education and languages of Hee Jae Cho, HKUST Mathematics.",
+        content:
+          "Experience, education and languages of Hee Jae Cho, HKUST Mathematics.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -65,7 +66,7 @@ function CV() {
             <p className="label">./home/heejae/profile/cv</p>
             <h1 className="page-title mt-7">
               Hee Jae
-              <br />
+  
               Cho
             </h1>
             <div className="mt-10 space-y-1 border-l border-accent pl-5 text-sm text-muted-foreground">
@@ -83,24 +84,36 @@ function CV() {
           <div className="max-w-sm lg:mt-40">
             <p className="label">Profile</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Interested in roles related to software development, data science, machine learning, and quantitative trading.
+              Interested in roles related to software development, data science,
+              machine learning, and quantitative trading.
             </p>
           </div>
         </div>
+        
 
         <div className="mt-20 grid gap-8 lg:grid-cols-[10rem_1fr]">
           <p className="label lg:pt-4">Experience</p>
-          <div className="border-t-2 border-border">
+
+          <div className="border-t border-dotted border-border">
             {experience.map((item) => (
               <article
                 key={item.role + item.range}
-                className="grid gap-3 border-b-2 border-border py-7 sm:grid-cols-[7rem_1fr]"
+                className="grid gap-3 border-b border-dotted border-border py-7 sm:grid-cols-[7rem_1fr]"
               >
-                <span className="font-mono text-[0.7rem] text-accent">{item.range}</span>
+                <span className="font-mono text-[0.7rem] text-accent">
+                  {item.range}
+                </span>
+
                 <div>
                   <h2 className="display text-2xl">{item.role}</h2>
-                  <p className="mt-1 text-sm font-medium">{item.org}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+
+                  <p className="mt-1 text-sm font-medium">
+                    {item.org}
+                  </p>
+
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {item.body}
+                  </p>
                 </div>
               </article>
             ))}
@@ -109,14 +122,19 @@ function CV() {
 
         <div className="mt-16 grid gap-8 lg:grid-cols-[10rem_1fr]">
           <p className="label lg:pt-4">Education & languages</p>
-          <div className="grid border-t-2 border-border sm:grid-cols-2 sm:divide-x-2 sm:divide-border">
-            <div className="border-b-2 border-border py-7 sm:pr-8">
-              <h2 className="display text-2xl">HKUST · 2024—2030</h2>
+
+          <div className="grid border-t border-dotted border-border sm:grid-cols-2 sm:divide-x sm:divide-dotted sm:divide-border">
+            <div className="border-b border-dotted border-border py-7 sm:pr-8">
+              <h2 className="display text-2xl">
+                HKUST · 2024—2030
+              </h2>
+
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                BSc Mathematics with an Extension inArtificial Intelligence.
+                BSc Mathematics with an Extension in Artificial Intelligence.
               </p>
             </div>
-            <div className="border-b-2 border-border py-7 sm:pl-8">
+
+            <div className="border-b border-dotted border-border py-7 sm:pl-8">
               <ul className="grid gap-2 font-mono text-xs text-muted-foreground">
                 {languages.map((l) => (
                   <li key={l}>{l}</li>

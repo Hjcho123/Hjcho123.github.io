@@ -172,7 +172,7 @@ function PlantATree() {
         <div className="mb-6 flex items-end justify-between gap-6">
           <div>
             <p className="label">./home/heejae/miscellaneous/plant_a_tree</p>
-            <h1 className="page-title mt-5">plant a tree</h1>
+            <h1 className="page-title mt-5">plant_a_tree</h1>
           </div>
         </div>
 

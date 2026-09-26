@@ -29,7 +29,7 @@ function Projects() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="title-block pt-8">
           <p className="label">./home/heejae/archive/selected_projects/</p>
-          <h1 className="page-title mt-7">selected projects</h1>
+          <h1 className="page-title mt-7">selected_projects</h1>
           <div className="title-rule mt-10" />
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
             A growing collection of personal work used to explore fundamental ideas in mathematics,

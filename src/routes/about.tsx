@@ -44,58 +44,97 @@ const notes = [
 function About() {
   return (
     <SiteLayout pathLabel="./home/heejae/profile/about_me">
-      <section className="mx-auto max-w-5xl px-6 py-24">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-          <div className="title-block pt-8">
-            <p className="label">./home/heejae/profile/about_me</p>
-            <h1 className="page-title mt-7">about me</h1>
-            <div className="title-rule mt-10" />
-            <div className="mt-6 max-w-xl space-y-4 text-sm leading-relaxed text-muted-foreground">
-              <p>Name: Heejae Cho</p>
-              <p>
-                Hello. I study a BSc in Mathematics with an extension in Artificial Intelligence at The Hong Kong
-                University of Science and Technology.
+      <div className="mx-auto max-w-6xl px-6 pt-32">
+        <div className="title-block">
+          <p className="label">./home/heejae/profile/about_me</p>
+        </div>
+      </div>
+
+      <section className="mx-auto w-full max-w-5xl px-4 pb-10 sm:px-6 lg:px-8">
+        {/* Centered About Me content */}
+        <div className="mx-auto mt-8 max-w-xl space-y-6 px-2 text-left text-sm leading-7 text-muted-foreground sm:px-0">
+          <div className="title-block">
+            <h1 className="page-title text-center">
+              about_me
+            </h1>
+
+            <div className="title-rule mx-auto mt-10" />
+
+            <div className="mx-auto mt-8 max-w-xl space-y-6 px-2 text-sm leading-7 text-muted-foreground text-justify sm:px-0">
+              <p className="text-center">
+                Name: Heejae Cho
               </p>
+
               <p>
-                I have a lot of different interests, but speaking to my academic and
-                professional pursuits, I'm particularly drawn to mathematics,
-                machine learning, and quantitative trading. You can find examples of my work in these areas in the <Link to="/projects" className="underline underline-offset-4">selected projects</Link> section of this website.
+                Hello. I study a BSc in Mathematics with an extension in
+                Artificial Intelligence at The Hong Kong University of Science
+                and Technology.
               </p>
+
               <p>
-                Outside of that, I like to spend my time reading, running, weight lifting, hiking, playing chess and sketching. I also probably type way faster than you.
+                I have a lot of different interests, but speaking to my
+                academic and professional pursuits, I'm particularly drawn to
+                mathematics, machine learning, and quantitative trading. You
+                can find examples of my work in these areas in the{" "}
+                <Link
+                  to="/projects"
+                  className="text-[#0712a6] underline underline-offset-4 hover:text-[#0712a6]"
+                >
+                  selected projects
+                </Link>{" "}
+                section of this website.
               </p>
+
               <p>
-                I am currently based in Hong Kong and Seoul. I was born and raised in Manila, The
-                Philippines.
+                Outside of that, I like to spend my time reading, running,
+                weight lifting, hiking, playing chess and sketching. I also
+                probably type way faster than you.
+              </p>
+
+              <p>
+                I am currently based in Hong Kong and Seoul. I was born and
+                raised in Manila, The Philippines.
               </p>
             </div>
           </div>
-
-          
         </div>
 
-        <div className="mt-16">
-          <h2 className="font-mono text-base font-semibold uppercase tracking-[0.18em]">Q&amp;A</h2>
-          <div className="mt-4 grid gap-4 md:grid-cols-3">
+        {/* Q&A */}
+        <div className="mt-20">
+          <h2 className="font-mono text-base font-semibold uppercase tracking-[0.18em]">
+            Q&amp;A
+          </h2>
+
+          <div className="mt-5 grid gap-5 md:grid-cols-3">
             {notes.map((note) => (
-              <article key={note.label} className="about-note flex flex-col border border-border bg-white p-4">
+              <article
+                key={note.label}
+                className="about-note flex flex-col border border-border bg-white p-4"
+              >
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                   {note.label}
                 </p>
+
                 {note.attribution ? (
                   <blockquote className="flex h-full flex-col">
-                    <p className="mt-4 text-sm leading-relaxed text-foreground">“{note.value}”</p>
+                    <p className="mt-4 text-sm leading-relaxed text-foreground">
+                      “{note.value}”
+                    </p>
+
                     <cite className="mt-auto pt-6 text-right font-mono text-[10px] not-italic leading-relaxed text-muted-foreground">
                       {note.attribution}
                     </cite>
                   </blockquote>
                 ) : (
-                  <p className="mt-4 text-sm leading-relaxed text-foreground">{note.value}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-foreground">
+                    {note.value}
+                  </p>
                 )}
               </article>
             ))}
           </div>
         </div>
+
       </section>
     </SiteLayout>
   );

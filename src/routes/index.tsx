@@ -87,7 +87,7 @@ function Index() {
     <SiteLayout showHomeButton={false}>
       <section className="flex min-h-[calc(100vh-8rem)] -translate-y-8 items-center justify-center px-6 py-16">
         <div className="flex w-full max-w-3xl flex-col items-center justify-center text-center">
-          <h1 className="terminal-name mb-3 text-foreground">heejae cho</h1>
+          <h1 className="terminal-name mb-3 text-foreground">heejae_cho</h1>
           
           <p className="mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
             {[
@@ -119,7 +119,7 @@ function Index() {
                   entries={[
                     { label: "selected_projects/", to: "/projects" },
                     { label: "blog/", to: "/blog" },
-                    { label: "monthly_music_recommendation/", to: "/monthly-music-recommendation" },
+                    
                   ]}
                 />
                 <DirectorySection
@@ -134,7 +134,6 @@ function Index() {
                           to: "https://www.linkedin.com/in/heejae-cho/",
                           external: true,
                         },
-                        { label: "ssrn", to: "https://www.ssrn.com/", external: true },
                         { label: "email", to: "mailto:hjchoaa@connect.ust.hk", external: true },
                       ],
                     },
@@ -153,11 +152,12 @@ function Index() {
                       label: "plant_a_tree",
                       to: "/plant-a-tree",
                     },
+                    { label: "monthly_music_recommendation", to: "/monthly-music-recommendation" },
                   ]}
                 />
 
                 <div className="directory-divider" aria-hidden="true">
-                  {"=".repeat(128)}
+                  {"·".repeat(128)}
                 </div>
 
                 <Link
