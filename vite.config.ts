@@ -16,6 +16,7 @@ export default defineConfig({
       pages: [
         { path: "/about", prerender: { enabled: true } },
         { path: "/blog", prerender: { enabled: true } },
+        { path: "/blog/deep-learning-by-ian-goodfellow", prerender: { enabled: true } },
         { path: "/cv", prerender: { enabled: true } },
         { path: "/monthly-music-recommendation", prerender: { enabled: true } },
         { path: "/plant-a-tree", prerender: { enabled: true } },

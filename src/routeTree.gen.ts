@@ -16,6 +16,7 @@ import { Route as CvRouteImport } from './routes/cv'
 import { Route as MonthlyMusicRecommendationRouteImport } from './routes/monthly-music-recommendation'
 import { Route as PlantATreeRouteImport } from './routes/plant-a-tree'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as BlogDeepLearningByIanGoodfellowRouteImport } from './routes/blog_.deep-learning-by-ian-goodfellow'
 import { Route as ProjectEmpiricalAssetPricingRouteImport } from './routes/project.empirical-asset-pricing'
 import { Route as ProjectLearningMachinesRouteImport } from './routes/project.learning-machines'
 import { Route as ProjectMathematicalStudiesRouteImport } from './routes/project.mathematical-studies'
@@ -56,6 +57,12 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogDeepLearningByIanGoodfellowRoute =
+  BlogDeepLearningByIanGoodfellowRouteImport.update({
+    id: '/blog_/deep-learning-by-ian-goodfellow',
+    path: '/blog/deep-learning-by-ian-goodfellow',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProjectEmpiricalAssetPricingRoute =
   ProjectEmpiricalAssetPricingRouteImport.update({
     id: '/project/empirical-asset-pricing',
@@ -82,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/monthly-music-recommendation': typeof MonthlyMusicRecommendationRoute
   '/plant-a-tree': typeof PlantATreeRoute
   '/projects': typeof ProjectsRoute
+  '/blog/deep-learning-by-ian-goodfellow': typeof BlogDeepLearningByIanGoodfellowRoute
   '/project/empirical-asset-pricing': typeof ProjectEmpiricalAssetPricingRoute
   '/project/learning-machines': typeof ProjectLearningMachinesRoute
   '/project/mathematical-studies': typeof ProjectMathematicalStudiesRoute
@@ -94,6 +102,7 @@ export interface FileRoutesByTo {
   '/monthly-music-recommendation': typeof MonthlyMusicRecommendationRoute
   '/plant-a-tree': typeof PlantATreeRoute
   '/projects': typeof ProjectsRoute
+  '/blog/deep-learning-by-ian-goodfellow': typeof BlogDeepLearningByIanGoodfellowRoute
   '/project/empirical-asset-pricing': typeof ProjectEmpiricalAssetPricingRoute
   '/project/learning-machines': typeof ProjectLearningMachinesRoute
   '/project/mathematical-studies': typeof ProjectMathematicalStudiesRoute
@@ -107,6 +116,7 @@ export interface FileRoutesById {
   '/monthly-music-recommendation': typeof MonthlyMusicRecommendationRoute
   '/plant-a-tree': typeof PlantATreeRoute
   '/projects': typeof ProjectsRoute
+  '/blog_/deep-learning-by-ian-goodfellow': typeof BlogDeepLearningByIanGoodfellowRoute
   '/project/empirical-asset-pricing': typeof ProjectEmpiricalAssetPricingRoute
   '/project/learning-machines': typeof ProjectLearningMachinesRoute
   '/project/mathematical-studies': typeof ProjectMathematicalStudiesRoute
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/monthly-music-recommendation'
     | '/plant-a-tree'
     | '/projects'
+    | '/blog/deep-learning-by-ian-goodfellow'
     | '/project/empirical-asset-pricing'
     | '/project/learning-machines'
     | '/project/mathematical-studies'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/monthly-music-recommendation'
     | '/plant-a-tree'
     | '/projects'
+    | '/blog/deep-learning-by-ian-goodfellow'
     | '/project/empirical-asset-pricing'
     | '/project/learning-machines'
     | '/project/mathematical-studies'
@@ -145,6 +157,7 @@ export interface FileRouteTypes {
     | '/monthly-music-recommendation'
     | '/plant-a-tree'
     | '/projects'
+    | '/blog_/deep-learning-by-ian-goodfellow'
     | '/project/empirical-asset-pricing'
     | '/project/learning-machines'
     | '/project/mathematical-studies'
@@ -158,6 +171,7 @@ export interface RootRouteChildren {
   MonthlyMusicRecommendationRoute: typeof MonthlyMusicRecommendationRoute
   PlantATreeRoute: typeof PlantATreeRoute
   ProjectsRoute: typeof ProjectsRoute
+  BlogDeepLearningByIanGoodfellowRoute: typeof BlogDeepLearningByIanGoodfellowRoute
   ProjectEmpiricalAssetPricingRoute: typeof ProjectEmpiricalAssetPricingRoute
   ProjectLearningMachinesRoute: typeof ProjectLearningMachinesRoute
   ProjectMathematicalStudiesRoute: typeof ProjectMathematicalStudiesRoute
@@ -214,6 +228,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog_/deep-learning-by-ian-goodfellow': {
+      id: '/blog_/deep-learning-by-ian-goodfellow'
+      path: '/blog/deep-learning-by-ian-goodfellow'
+      fullPath: '/blog/deep-learning-by-ian-goodfellow'
+      preLoaderRoute: typeof BlogDeepLearningByIanGoodfellowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/project/empirical-asset-pricing': {
       id: '/project/empirical-asset-pricing'
       path: '/project/empirical-asset-pricing'
@@ -246,6 +267,7 @@ const rootRouteChildren: RootRouteChildren = {
   MonthlyMusicRecommendationRoute: MonthlyMusicRecommendationRoute,
   PlantATreeRoute: PlantATreeRoute,
   ProjectsRoute: ProjectsRoute,
+  BlogDeepLearningByIanGoodfellowRoute: BlogDeepLearningByIanGoodfellowRoute,
   ProjectEmpiricalAssetPricingRoute: ProjectEmpiricalAssetPricingRoute,
   ProjectLearningMachinesRoute: ProjectLearningMachinesRoute,
   ProjectMathematicalStudiesRoute: ProjectMathematicalStudiesRoute,

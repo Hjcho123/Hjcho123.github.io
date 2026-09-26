@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { posts } from "@/content/blog";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -35,12 +36,28 @@ function Blog() {
           </p>
         </div>
 
-        <div className="mt-16 border-2 border-border bg-white p-6 sm:p-10">
-          <p className="label">Notebook / paused</p>
-          <h2 className="display mt-4 text-2xl sm:text-3xl">No posts published yet.</h2>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            The notebook is being prepared. Existing writing is stored privately for now.
-          </p>
+        <div className="mt-16 divide-y-2 divide-border border-y-2 border-border">
+          {posts.map((post, index) => (
+            <Link
+              key={post.slug}
+              to={`/blog/${post.slug}`}
+              className="group grid gap-5 py-7 transition-colors hover:bg-[#0712a6] hover:text-white sm:grid-cols-[5rem_minmax(0,1fr)_auto] sm:items-start sm:px-4"
+            >
+              <span className="label pt-1 group-hover:text-white">{String(index + 1).padStart(2, "0")}</span>
+              <span>
+                <span className="display block text-xl sm:text-2xl">{post.title}</span>
+                <span className="mt-3 block max-w-2xl text-sm leading-relaxed text-muted-foreground group-hover:text-white">
+                  {post.excerpt}
+                </span>
+                <span className="mt-4 block font-mono text-xs text-muted-foreground group-hover:text-white">
+                  {post.date} / {post.field}
+                </span>
+              </span>
+              <span className="font-mono text-xs text-muted-foreground transition-colors group-hover:text-white sm:pt-1" aria-hidden="true">
+                read -&gt;
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
     </SiteLayout>
