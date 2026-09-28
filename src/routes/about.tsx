@@ -85,8 +85,8 @@ function About() {
               </p>
 
               <p>
-                Outside of that, I'm also interested in reading, running,
-                weightlifting, hiking, playing chess and visual design. I also
+                Outside of that, I'm also interested in reading, sports (running,
+                weightlifting, hiking), playing chess and visual design. I also
                 do competitive programming.
               </p>
 
