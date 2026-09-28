@@ -64,6 +64,9 @@ function About() {
               <p className="text-center">
                 Name: Heejae Cho
               </p>
+              <p className="text-center">
+                Age: 20
+              </p>
 
               <p>
                 Hello. I study a BSc in Mathematics with an extension in
@@ -72,9 +75,8 @@ function About() {
               </p>
 
               <p>
-                I have a lot of different interests, but speaking to my
-                academic and professional pursuits, I specialize in
-                machine learning, software development, and quantitative trading. You
+                I have a lot of different interests, but speaking to my professional pursuits, I specialise in
+                machine learning, quantitative finance, and software development. You
                 can find examples of my work in these areas in the{" "}
                 <Link
                   to="/projects"
@@ -86,13 +88,13 @@ function About() {
               </p>
 
               <p>
-                Outside of that, I like to spend my time reading, running,
-                weight lifting, hiking, playing chess and sketching. I also
-                probably type faster than you.
+                Outside of that, I'm also interested in reading, running,
+                weightlifting, hiking, playing chess and sketching. I also
+                do competitive programming.
               </p>
 
               <p>
-                I am currently based in Hong Kong and Seoul. I was born and
+                I am primarily based in Hong Kong and Seoul. I was born and
                 raised in Manila, the Philippines.
               </p>
             </div>
