@@ -30,7 +30,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Noto Serif KR", "Libre Baskerville", Georgia, serif;
+  --font-display: "Times New Roman", Times, serif;
   --font-sans: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
   --font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
   --shadow-panel: none;
