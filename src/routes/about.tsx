@@ -64,10 +64,7 @@ function About() {
               <p className="text-center">
                 Name: Heejae Cho
               </p>
-              <p className="text-center">
-                Age: 20
-              </p>
-
+              
               <p>
                 Hello. I study a BSc in Mathematics with an extension in
                 Artificial Intelligence at The Hong Kong University of Science
