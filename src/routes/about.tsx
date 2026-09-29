@@ -36,7 +36,7 @@ const notes = [
   },
   {
     label: "a fun fact?",
-    value: "When I was in the army, I was the squad leader of a 5-person artillery firing crew.",
+    value: "I can type at 160 words per minute, 4 times the average typing speed.",
     attribution: "specifically, the K9 Thunder self-propelled howitzer, 155mm",
   },
 ];
@@ -88,6 +88,10 @@ function About() {
                 Outside of that, I'm also interested in reading, sports (running,
                 weightlifting, hiking), playing chess and visual design. I also
                 do competitive programming.
+              </p>
+
+              <p>
+                I'm also currently a soldier in the Korean Army. Where I work as a crew leader for the K9 artillery system.
               </p>
 
               <p>
