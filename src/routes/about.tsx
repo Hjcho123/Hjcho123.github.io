@@ -72,7 +72,7 @@ function About() {
               </p>
 
               <p>
-                I have a lot of different interests, but speaking to my professional pursuits, I specialise in
+                I have a lot of different interests, but my primary areas of focus are in
                 machine learning, quantitative finance, and software development. You
                 can find examples of my work in these areas in the{" "}
                 <Link
@@ -85,13 +85,13 @@ function About() {
               </p>
 
               <p>
-                Outside of that, I'm also interested in reading, sports (running,
-                weightlifting, hiking), playing chess and visual design. I also
-                do competitive programming.
+                Outside of that, I enjoy reading, sports (running,
+                weightlifting, hiking), playing chess and visual art. I
+                do competitive programming too.
               </p>
 
               <p>
-                I'm also currently a soldier in the Korean Army. Where I work as a crew leader for the K9 artillery system.
+                I'm also a soldier. I serve in the Korean Army. I work as a crew leader for the K9 artillery system.
               </p>
 
               <p>
