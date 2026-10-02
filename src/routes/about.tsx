@@ -37,7 +37,7 @@ const notes = [
   {
     label: "a fun fact?",
     value: "I can type at 160 words per minute, 4 times the average typing speed.",
-    attribution: "specifically, the K9 Thunder self-propelled howitzer, 155mm",
+    attribution: "still took me ages to write this about page tho",
   },
 ];
 
