@@ -91,7 +91,7 @@ function About() {
               </p>
 
               <p>
-                I'm also a soldier. I serve in the Korean Army. I work as a K9 artillery squad leader.
+                I'm also a soldier. I serve in the Korean Army. I work in Artillery.
               </p>
 
               <p>
