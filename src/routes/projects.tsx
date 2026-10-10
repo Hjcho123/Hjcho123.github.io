@@ -48,6 +48,7 @@ function Projects() {
             The project archive is being prepared. Existing project material is stored privately for now.
           </p>
         </div>
+        
       </section>
     </SiteLayout>
   );
