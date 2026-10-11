@@ -110,32 +110,72 @@
 }
 
 :root[data-theme="green"] {
-  --background: #050a09;
-  --foreground: #9cc9b8;
-  --card: #070d0b;
-  --card-foreground: #9cc9b8;
-  --popover: #070d0b;
-  --popover-foreground: #9cc9b8;
-  --primary: #9cc9b8;
-  --primary-foreground: #050a09;
-  --secondary: #0a1210;
-  --secondary-foreground: #9cc9b8;
-  --muted: #0a1210;
-  --muted-foreground: #5f8578;
-  --accent: #9cc9b8;
-  --accent-foreground: #050a09;
-  --destructive: #c4695f;
-  --destructive-foreground: #050a09;
-  --border: #35574b;
-  --input: #14231e;
-  --ring: #9cc9b8;
-  --paper: #060b0a;
-  --on-ink: #050a09;
-  --highlight: #1d3b34;
-  --highlight-foreground: #d2ece0;
-  --link: #7fb3c8;
-  --canvas-bg: #050a09;
-  --canvas-ink: rgba(156, 201, 184, 0.9);
+  --background: #030a08;
+  --foreground: #4dffb0;
+  --card: #06120e;
+  --card-foreground: #4dffb0;
+  --popover: #06120e;
+  --popover-foreground: #4dffb0;
+  --primary: #4dffb0;
+  --primary-foreground: #030a08;
+  --secondary: #08170f;
+  --secondary-foreground: #4dffb0;
+  --muted: #08170f;
+  --muted-foreground: #2fa877;
+  --accent: #4dffb0;
+  --accent-foreground: #030a08;
+  --destructive: #ff4d5e;
+  --destructive-foreground: #030a08;
+  --border: #1f7a55;
+  --input: #0d3324;
+  --ring: #4dffb0;
+  --paper: #050f0b;
+  --on-ink: #030a08;
+  --highlight: #4dffb0;
+  --highlight-foreground: #030a08;
+  --link: #5ee6ff;
+  --canvas-bg: #030a08;
+  --canvas-ink: rgba(77, 255, 176, 0.9);
+}
+
+/* Scanlines and a soft vignette, all themes */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.22) 0, rgba(0, 0, 0, 0.22) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+h1,
+.directory-entry,
+.page-title {
+  text-shadow: 0 0 6px color-mix(in srgb, currentColor 35%, transparent);
+}
+
+:root[data-theme="macintosh"] body::after {
+  background:
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 0, rgba(0, 0, 0, 0.07) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse at center, transparent 70%, rgba(0, 0, 0, 0.14) 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::after {
+    animation: crt-flicker 6s steps(60) infinite;
+  }
+}
+
+@keyframes crt-flicker {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(0.96);
+  }
 }
 
 /* Macintosh: black on white */
@@ -204,7 +244,7 @@
 }
 
 :root[data-theme="green"] {
-  --tree-color: #35574b;
+  --tree-color: #1f7a55;
 }
 
 .directory-entry .theme-current {
