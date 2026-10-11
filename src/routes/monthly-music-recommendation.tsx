@@ -35,7 +35,7 @@ function MonthlyMusicRecommendation() {
         </div>
 
         <section className="mx-auto mt-10 max-w-4xl sm:mt-16" aria-labelledby="featured-recommendation">
-          <article className="min-w-0 border-2 border-border bg-white">
+          <article className="min-w-0 border-2 border-border bg-paper">
             <div className="flex min-w-0 flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border px-4 py-2 font-mono text-[11px] text-muted-foreground sm:px-6">
               <span className="break-all">heejae@archive:~$ open featured_record</span>
               <span>music / 01</span>

@@ -17,7 +17,7 @@ export function SiteLayout({
           {showHomeButton ? (
             <Link
               to="/"
-              className="home-button inline-flex h-8 w-8 items-center justify-center border border-border bg-white text-[14px] text-foreground transition-colors hover:bg-foreground hover:text-white"
+              className="home-button inline-flex h-8 w-8 items-center justify-center border border-border bg-paper text-[14px] text-foreground transition-colors hover:bg-foreground hover:text-on-ink"
               aria-label="Go home"
             >
               <span aria-hidden>⌂</span>

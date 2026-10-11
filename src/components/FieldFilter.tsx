@@ -80,7 +80,7 @@ export function FieldFilterMenu({
       <div ref={filterRef} className="relative">
         <button
           type="button"
-          className="border border-border bg-white px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-foreground hover:bg-foreground hover:text-white focus:border-foreground focus:outline-none"
+          className="border border-border bg-paper px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-foreground hover:bg-foreground hover:text-on-ink focus:border-foreground focus:outline-none"
           aria-haspopup="listbox"
           aria-expanded={filterOpen}
           onClick={() => setFilterOpen((open) => !open)}
@@ -89,7 +89,7 @@ export function FieldFilterMenu({
         </button>
         {filterOpen ? (
           <div
-            className="absolute right-0 z-20 mt-1 min-w-full border border-border bg-white p-1 shadow-sm"
+            className="absolute right-0 z-20 mt-1 min-w-full border border-border bg-paper p-1 shadow-sm"
             role="listbox"
             aria-label="Filter by field"
           >
@@ -99,7 +99,7 @@ export function FieldFilterMenu({
                 type="button"
                 role="option"
                 aria-selected={selectedField === field}
-                className="block w-full whitespace-nowrap px-3 py-2 text-left font-mono text-xs uppercase tracking-[0.12em] text-foreground hover:bg-foreground hover:text-white"
+                className="block w-full whitespace-nowrap px-3 py-2 text-left font-mono text-xs uppercase tracking-[0.12em] text-foreground hover:bg-foreground hover:text-on-ink"
                 onClick={() => selectField(field)}
               >
                 {field === "all" ? allLabel : field}

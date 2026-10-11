@@ -42,22 +42,22 @@ function Blog() {
             <a
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group grid gap-5 py-7 transition-colors hover:bg-[#0712a6] hover:text-white sm:grid-cols-[5rem_minmax(0,1fr)_auto] sm:items-start sm:px-4"
+              className="group grid gap-5 py-7 transition-colors hover:bg-highlight hover:text-highlight-foreground sm:grid-cols-[5rem_minmax(0,1fr)_auto] sm:items-start sm:px-4"
             >
-              <span className="label pt-1 group-hover:text-white">
+              <span className="label pt-1 group-hover:text-highlight-foreground">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <span>
                 <span className="display block text-xl sm:text-2xl">{post.title}</span>
-                <span className="mt-3 block max-w-2xl text-sm leading-relaxed text-muted-foreground group-hover:text-white">
+                <span className="mt-3 block max-w-2xl text-sm leading-relaxed text-muted-foreground group-hover:text-highlight-foreground">
                   {post.excerpt}
                 </span>
-                <span className="mt-4 block font-mono text-xs text-muted-foreground group-hover:text-white">
+                <span className="mt-4 block font-mono text-xs text-muted-foreground group-hover:text-highlight-foreground">
                   {post.date} / {post.field}
                 </span>
               </span>
               <span
-                className="font-mono text-xs text-muted-foreground transition-colors group-hover:text-white sm:pt-1"
+                className="font-mono text-xs text-muted-foreground transition-colors group-hover:text-highlight-foreground sm:pt-1"
                 aria-hidden="true"
               >
                 read -&gt;

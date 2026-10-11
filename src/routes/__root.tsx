@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 import "../styles.css";
 import { reportRuntimeError } from "../lib/error-reporting";
+import { themeInitScript } from "../lib/theme";
 
 function NotFoundComponent() {
   return (
@@ -95,6 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: `${import.meta.env.BASE_URL}favicon.svg`, type: "image/svg+xml" },
     ],
+    scripts: [{ children: themeInitScript }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -103,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

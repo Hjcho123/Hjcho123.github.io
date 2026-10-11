@@ -30,34 +30,185 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Noto Serif KR", "Libre Baskerville", Georgia, serif;
-  --font-sans: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
-  --font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
+  --color-paper: var(--paper);
+  --color-on-ink: var(--on-ink);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-link: var(--link);
+  --font-display: var(--theme-font-display);
+  --font-sans: var(--theme-font-mono);
+  --font-mono: var(--theme-font-mono);
   --shadow-panel: none;
 }
 
 :root {
   --radius: 0rem;
-  --background: #ffffff;
-  --foreground: #111111;
+  --background: #0000aa;
+  --foreground: #e8e8e8;
+  --card: #0000aa;
+  --card-foreground: #e8e8e8;
+  --popover: #0000aa;
+  --popover-foreground: #e8e8e8;
+  --primary: #ffffff;
+  --primary-foreground: #0000aa;
+  --secondary: #0000c8;
+  --secondary-foreground: #e8e8e8;
+  --muted: #0000c8;
+  --muted-foreground: #9ec8ff;
+  --accent: #ffffff;
+  --accent-foreground: #0000aa;
+  --destructive: #ff5555;
+  --destructive-foreground: #0000aa;
+  --border: #c8c8c8;
+  --input: #3a3acf;
+  --ring: #ffffff;
+  --paper: #0000aa;
+  --on-ink: #0000aa;
+  --highlight: #00aaaa;
+  --highlight-foreground: #000000;
+  --link: #ffff55;
+  --canvas-bg: #00005a;
+  --canvas-ink: rgba(232, 232, 232, 0.9);
+  --body-pattern: none;
+  --body-pattern-size: auto;
+  --label-foreground: var(--background);
+  --label-background: var(--foreground);
+  --theme-font-display: "Noto Serif KR", "Libre Baskerville", Georgia, serif;
+  --theme-font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
+}
+
+/* Themes differ by colour only. Each overrides the same tokens as the BIOS default above. */
+
+/* Amber CRT: orange on black, with alert red */
+:root[data-theme="orange"] {
+  --background: #0a0603;
+  --foreground: #ff8a1f;
+  --card: #120a04;
+  --card-foreground: #ff8a1f;
+  --popover: #120a04;
+  --popover-foreground: #ff8a1f;
+  --primary: #ff8a1f;
+  --primary-foreground: #0a0603;
+  --secondary: #1a0e05;
+  --secondary-foreground: #ff8a1f;
+  --muted: #1a0e05;
+  --muted-foreground: #b3601a;
+  --accent: #ff8a1f;
+  --accent-foreground: #0a0603;
+  --destructive: #e8241c;
+  --destructive-foreground: #0a0603;
+  --border: #8f4a12;
+  --input: #3a1d08;
+  --ring: #ff8a1f;
+  --paper: #0f0804;
+  --on-ink: #0a0603;
+  --highlight: #e8241c;
+  --highlight-foreground: #0a0603;
+  --link: #ff5a36;
+  --canvas-bg: #0a0603;
+  --canvas-ink: rgba(255, 138, 31, 0.9);
+}
+
+:root[data-theme="green"] {
+  --background: #050a09;
+  --foreground: #9cc9b8;
+  --card: #070d0b;
+  --card-foreground: #9cc9b8;
+  --popover: #070d0b;
+  --popover-foreground: #9cc9b8;
+  --primary: #9cc9b8;
+  --primary-foreground: #050a09;
+  --secondary: #0a1210;
+  --secondary-foreground: #9cc9b8;
+  --muted: #0a1210;
+  --muted-foreground: #5f8578;
+  --accent: #9cc9b8;
+  --accent-foreground: #050a09;
+  --destructive: #c4695f;
+  --destructive-foreground: #050a09;
+  --border: #35574b;
+  --input: #14231e;
+  --ring: #9cc9b8;
+  --paper: #060b0a;
+  --on-ink: #050a09;
+  --highlight: #1d3b34;
+  --highlight-foreground: #d2ece0;
+  --link: #7fb3c8;
+  --canvas-bg: #050a09;
+  --canvas-ink: rgba(156, 201, 184, 0.9);
+}
+
+/* Macintosh: black on white */
+:root[data-theme="macintosh"] {
+  --background: #dcdcdc;
+  --foreground: #000000;
   --card: #ffffff;
-  --card-foreground: #111111;
+  --card-foreground: #000000;
   --popover: #ffffff;
-  --popover-foreground: #111111;
-  --primary: #111111;
+  --popover-foreground: #000000;
+  --primary: #000000;
   --primary-foreground: #ffffff;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #111111;
-  --muted: #f5f5f5;
-  --muted-foreground: #2c2c2c;
-  --accent: #111111;
+  --secondary: #ffffff;
+  --secondary-foreground: #000000;
+  --muted: #ffffff;
+  --muted-foreground: #333333;
+  --accent: #000000;
   --accent-foreground: #ffffff;
-  --destructive: #111111;
+  --destructive: #000000;
   --destructive-foreground: #ffffff;
   --border: #000000;
-  --input: #d9d9d9;
-  --ring: #111111;
-  --panel-shadow: none;
+  --input: #bbbbbb;
+  --ring: #000000;
+  --paper: #ffffff;
+  --on-ink: #ffffff;
+  --highlight: #000000;
+  --highlight-foreground: #ffffff;
+  --link: #000000;
+  --canvas-bg: #ffffff;
+  --canvas-ink: rgba(169, 212, 191, 0.9);
+}
+
+/* White CRT: cool white phosphor */
+:root[data-theme="white"] {
+  --background: #07090b;
+  --foreground: #dfe8ef;
+  --card: #0a0d10;
+  --card-foreground: #dfe8ef;
+  --popover: #0a0d10;
+  --popover-foreground: #dfe8ef;
+  --primary: #dfe8ef;
+  --primary-foreground: #07090b;
+  --secondary: #10151a;
+  --secondary-foreground: #dfe8ef;
+  --muted: #10151a;
+  --muted-foreground: #8a98a4;
+  --accent: #dfe8ef;
+  --accent-foreground: #07090b;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #07090b;
+  --border: #5a6872;
+  --input: #26303a;
+  --ring: #dfe8ef;
+  --paper: #0a0d10;
+  --on-ink: #07090b;
+  --highlight: #dfe8ef;
+  --highlight-foreground: #07090b;
+  --link: #9fd0ff;
+  --canvas-bg: #07090b;
+  --canvas-ink: rgba(169, 212, 191, 0.9);
+}
+
+/* Tree line character per theme: System 6 dotted rules, dim phosphor on Green CRT */
+:root[data-theme="macintosh"] {
+  --tree-style: dotted;
+}
+
+:root[data-theme="green"] {
+  --tree-color: #35574b;
+}
+
+.directory-entry .theme-current {
+  opacity: 0.75;
 }
 
 @layer base {
@@ -69,13 +220,13 @@
   }
 
   ::selection {
-    background: #0712a6;
-    color: #ffffff;
+    background: var(--highlight);
+    color: var(--highlight-foreground);
   }
 
   ::-moz-selection {
-    background: #0712a6;
-    color: #ffffff;
+    background: var(--highlight);
+    color: var(--highlight-foreground);
   }
 
   html {
@@ -85,8 +236,8 @@
   body {
     margin: 0;
     background-color: var(--color-background);
-    background-image: repeating-conic-gradient(#e7e6e665 0% 25%, transparent 0% 50%);
-    background-size: 100px 3px;
+    background-image: var(--body-pattern);
+    background-size: var(--body-pattern-size);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -155,9 +306,11 @@
 }
 
 .directory-panel {
-  --directory-border-color: #000000;
+  --directory-border-color: var(--border);
+  --tree-line-color: var(--tree-color, var(--directory-border-color));
+  --tree-line-style: var(--tree-style, solid);
   border: 1px solid var(--directory-border-color);
-  background: #ffffff;
+  background: var(--paper);
   padding: 0.35rem 0.25rem 0.2rem;
 }
 
@@ -165,7 +318,8 @@
   font-family: var(--font-mono);
   font-size: 0.8rem;
   line-height: 1.6;
-  color: var(--color-foreground);
+  color: var(--label-foreground);
+  background: var(--label-background);
   border-bottom: 1px solid var(--directory-border-color);
   margin: -0.35rem -0.25rem 0.35rem;
 }
@@ -196,6 +350,10 @@
   transition: background-color 120ms ease, color 120ms ease;
 }
 
+.directory-links > .directory-folder > summary {
+  padding-left: 0;
+}
+
 .directory-folder > summary::-webkit-details-marker {
   display: none;
 }
@@ -209,7 +367,7 @@
   position: relative;
   margin-top: 0.2rem;
   padding-left: 1.8rem;
-  border-left: 1px solid var(--directory-border-color);
+  border-left: 1px var(--tree-line-style) var(--tree-line-color);
 }
 
 .directory-links .directory-links {
@@ -226,20 +384,27 @@
   top: -0.825rem;
   left: -1px;
   height: 0.825rem;
-  border-left: 1px solid var(--directory-border-color);
+  border-left: 1px var(--tree-line-style) var(--tree-line-color);
 }
 
-.directory-links a {
+.directory-links a,
+.directory-links button {
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  width: 100%;
   padding: 0.12rem 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
   color: var(--color-foreground);
   transition: background-color 120ms ease, color 120ms ease;
 }
 
 .directory-links > a::before,
+.directory-links > button::before,
 .directory-links > .directory-folder > summary::before {
   content: "";
   position: absolute;
@@ -247,10 +412,11 @@
   left: calc(-1 * var(--directory-branch-offset) - 1px);
   width: calc(var(--directory-branch-offset) + 1px);
   z-index: 2;
-  border-top: 1px solid var(--directory-border-color);
+  border-top: 1px var(--tree-line-style) var(--tree-line-color);
 }
 
 .directory-links > a:last-child::after,
+.directory-links > button:last-child::after,
 .directory-links > .directory-folder:last-child::after {
   content: "";
   position: absolute;
@@ -259,16 +425,29 @@
   top: 50%;
   bottom: 0;
   width: 1px;
-  background: #ffffff;
+  background: var(--paper);
 }
 
 .directory-links > .directory-folder:last-child::after {
   top: 0.625rem;
 }
 
-.directory-links a:hover {
-  background: #0712a6;
-  color: #ffffff;
+.directory-links a:hover,
+.directory-links button:hover,
+.directory-links button:focus-visible {
+  background: var(--highlight);
+  color: var(--highlight-foreground);
+  outline: none;
+}
+
+.directory-links button:hover .node-index,
+.directory-links button:focus-visible .node-index {
+  color: var(--highlight-foreground);
+}
+
+.directory-links > button:hover::before,
+.directory-links > button:focus-visible::before {
+  border-color: var(--highlight);
 }
 
 .directory-root-link {
@@ -279,8 +458,8 @@
 }
 
 .directory-root-link:hover {
-  background: #0712a6;
-  color: #ffffff;
+  background: var(--highlight);
+  color: var(--highlight-foreground);
 }
 
 .directory-divider {
@@ -294,7 +473,7 @@
 .directory-symlink {
   margin-top: 0.4rem;
   padding: 0.25rem 0.2rem;
-  color: #0712a6;
+  color: var(--link);
 }
 
 .directory-symlink + .directory-symlink {
@@ -304,15 +483,15 @@
 }
 
 .directory-symlink:hover {
-  color: #ffffff;
+  color: var(--highlight-foreground);
 }
 
 .directory-symlink-arrow {
-  color: #0712a6;
+  color: var(--link);
 }
 
 .directory-symlink:hover .directory-symlink-arrow {
-  color: #ffffff;
+  color: var(--highlight-foreground);
 }
 
 .tree-toolbox {
@@ -332,7 +511,7 @@
   width: 14rem;
   padding: 0.65rem;
   border: 1px solid var(--color-border);
-  background: #ffffff;
+  background: var(--paper);
   color: var(--color-muted-foreground);
   font-family: var(--font-mono);
   font-size: 0.65rem;
@@ -366,7 +545,7 @@
   width: 100%;
   border: 1px solid var(--color-border);
   padding: 0.35rem 0.45rem;
-  background: #ffffff;
+  background: var(--paper);
   color: var(--color-foreground);
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -379,8 +558,8 @@
 
 .directory-folder > summary:hover,
 .directory-folder > summary:focus-visible {
-  background: #0712a6;
-  color: #ffffff;
+  background: var(--highlight);
+  color: var(--highlight-foreground);
   outline: none;
 }
 
@@ -392,23 +571,23 @@
 }
 
 .directory-links a:hover .node-index {
-  color: #ffffff;
+  color: var(--highlight-foreground);
 }
 
 .directory-folder > summary:hover .node-index,
 .directory-folder > summary:focus-visible .node-index {
-  color: #ffffff;
+  color: var(--highlight-foreground);
 }
 
 .directory-links > a:hover::before,
 .directory-links > .directory-folder > summary:hover::before,
 .directory-links > .directory-folder > summary:focus-visible::before {
-  border-color: #0712a6;
+  border-color: var(--highlight);
 }
 
 .about-visual {
   border: 1px solid var(--color-border);
-  background: #ffffff;
+  background: var(--paper);
   padding: 1rem;
 }
 
@@ -422,12 +601,12 @@
   display: block;
   aspect-ratio: 1;
   border: 1px solid var(--color-border);
-  background: #ffffff;
+  background: var(--paper);
 }
 
 .about-visual-grid span.filled {
-  background: #111111;
-  border-color: #111111;
+  background: var(--foreground);
+  border-color: var(--foreground);
 }
 
 .about-note {

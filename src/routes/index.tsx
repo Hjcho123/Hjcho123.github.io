@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { THEMES, setTheme, useTheme } from "@/lib/theme";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,6 +30,8 @@ type DirectoryEntry = {
   external?: boolean;
   children?: DirectoryEntry[];
   open?: boolean;
+  onSelect?: () => void;
+  current?: boolean;
 };
 
 function DirectoryLinks({ entries }: { entries: DirectoryEntry[] }) {
@@ -39,8 +42,23 @@ function DirectoryLinks({ entries }: { entries: DirectoryEntry[] }) {
           <>
             <span className="node-index">{String(index + 1).padStart(2, "0")}</span>
             <span>{entry.label}</span>
+            {entry.current && <span className="theme-current">(current)</span>}
           </>
         );
+
+        if (entry.onSelect) {
+          return (
+            <button
+              key={entry.label}
+              type="button"
+              onClick={entry.onSelect}
+              aria-pressed={entry.current}
+              className="directory-entry directory-node"
+            >
+              {content}
+            </button>
+          );
+        }
 
         if (entry.children) {
           return (
@@ -83,6 +101,7 @@ function DirectorySection({ title, entries }: { title: string; entries: Director
 }
 
 function Index() {
+  const currentTheme = useTheme();
   return (
     <SiteLayout showHomeButton={false}>
       <section className="flex min-h-[calc(100vh-8rem)] -translate-y-8 items-center justify-center px-6 py-16">
@@ -152,6 +171,14 @@ function Index() {
                       to: "/plant-a-tree",
                     },
                     { label: "monthly_music_recommendation", to: "/monthly-music-recommendation" },
+                    {
+                      label: "select_theme/",
+                      children: THEMES.map((theme) => ({
+                        label: theme.label,
+                        current: theme.id === currentTheme,
+                        onSelect: () => setTheme(theme.id),
+                      })),
+                    },
                   ]}
                 />
 

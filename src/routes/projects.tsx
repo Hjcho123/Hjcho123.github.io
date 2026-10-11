@@ -41,7 +41,7 @@ function Projects() {
           </dl>
         </div>
 
-        <div className="mt-16 border-2 border-border bg-white p-6 sm:p-10">
+        <div className="mt-16 border-2 border-border bg-paper p-6 sm:p-10">
           <p className="label">Archive / paused</p>
           <h2 className="display mt-4 text-2xl sm:text-3xl">No projects published yet.</h2>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">

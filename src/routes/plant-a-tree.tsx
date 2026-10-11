@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
+import { readCssVar } from "@/lib/theme";
 
 export const Route = createFileRoute("/plant-a-tree")({
   head: () => ({
@@ -88,12 +89,12 @@ function PlantATree() {
     const draw = (visibleBranches: number) => {
       const bounds = canvas.getBoundingClientRect();
       context.clearRect(-bounds.width / 2, -bounds.height * 0.86, bounds.width, bounds.height);
-      context.fillStyle = "#050505";
+      context.fillStyle = readCssVar("--canvas-bg", "#050505");
       context.fillRect(-bounds.width / 2, -bounds.height * 0.86, bounds.width, bounds.height);
 
       context.lineCap = "round";
       context.lineWidth = 1;
-      context.strokeStyle = "rgba(255, 255, 255, 0.9)";
+      context.strokeStyle = readCssVar("--canvas-ink", "rgba(255, 255, 255, 0.9)");
 
       branches.slice(0, visibleBranches).forEach((branch) => {
         context.beginPath();
@@ -178,7 +179,7 @@ function PlantATree() {
 
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_15rem] lg:items-start">
           <div className="min-w-0">
-            <div className="tree-experiment relative overflow-hidden border border-border bg-black">
+            <div className="tree-experiment relative overflow-hidden border border-border bg-[var(--canvas-bg)]">
               <canvas ref={canvasRef} className="block h-[min(58vh,36rem)] min-h-[20rem] w-full sm:h-[min(68vh,42rem)] sm:min-h-[28rem]" />
             </div>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
@@ -187,7 +188,7 @@ function PlantATree() {
             </p>
           </div>
 
-          <aside className="tree-toolbox border border-border bg-white p-4">
+          <aside className="tree-toolbox border border-border bg-paper p-4">
             <div className="mb-5 flex items-baseline justify-between gap-3 border-b border-border pb-3">
               <p className="font-mono text-[10px] uppercase tracking-[0.16em]">parameters</p>
               <span className="font-mono text-[10px] text-muted-foreground">tree.py</span>
@@ -201,7 +202,7 @@ function PlantATree() {
             </div>
             <button
               type="button"
-              className="mt-6 w-full border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-[0.16em] transition-colors hover:bg-foreground hover:text-white"
+              className="mt-6 w-full border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-[0.16em] transition-colors hover:bg-foreground hover:text-on-ink"
               onClick={() => setDrawKey((key) => key + 1)}
             >
               regrow

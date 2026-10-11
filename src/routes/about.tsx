@@ -77,7 +77,7 @@ function About() {
                 can find examples of my work in these areas in the{" "}
                 <Link
                   to="/projects"
-                  className="text-[#0712a6] underline underline-offset-4 hover:text-[#0712a6]"
+                  className="text-link underline underline-offset-4 hover:text-link"
                 >
                   selected projects
                 </Link>{" "}
@@ -112,7 +112,7 @@ function About() {
             {notes.map((note) => (
               <article
                 key={note.label}
-                className="about-note flex flex-col border border-border bg-white p-4"
+                className="about-note flex flex-col border border-border bg-paper p-4"
               >
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                   {note.label}

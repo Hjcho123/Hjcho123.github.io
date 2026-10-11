@@ -60,7 +60,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
 
               <label
                 htmlFor="project-photos"
-                className="mt-6 flex min-h-48 cursor-pointer flex-col items-center justify-center border-2 border-dashed border-border bg-white p-8 text-center transition-colors hover:bg-card"
+                className="mt-6 flex min-h-48 cursor-pointer flex-col items-center justify-center border-2 border-dashed border-border bg-paper p-8 text-center transition-colors hover:bg-card"
               >
                 <span className="font-mono text-sm">drop images here or choose files</span>
                 <span className="mt-2 text-xs text-muted-foreground">JPG, PNG, WEBP</span>
@@ -77,7 +77,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
               {photoUrls.length > 0 && (
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   {photoUrls.map((url, index) => (
-                    <figure key={url} className="border-2 border-border bg-white p-2">
+                    <figure key={url} className="border-2 border-border bg-paper p-2">
                       <img src={url} alt={photos[index]?.name ?? "Project upload"} className="aspect-video w-full object-cover" />
                       <figcaption className="truncate px-1 py-2 font-mono text-xs text-muted-foreground">
                         {photos[index]?.name}
@@ -95,7 +95,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
               </div>
               <label
                 htmlFor="project-documents"
-                className="mt-6 flex cursor-pointer items-center justify-between border-2 border-border bg-white px-5 py-4 font-mono text-sm hover:bg-card"
+                className="mt-6 flex cursor-pointer items-center justify-between border-2 border-border bg-paper px-5 py-4 font-mono text-sm hover:bg-card"
               >
                 <span>choose documents</span>
                 <span aria-hidden>+</span>
