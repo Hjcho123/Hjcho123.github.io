@@ -231,6 +231,12 @@ h1,
 
 .directory-entry .theme-current {
   opacity: 0.75;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.directory-links .directory-node > span:not(.node-index):not(.theme-current) {
+  white-space: nowrap;
 }
 
 /*
@@ -256,7 +262,7 @@ h1,
 }
 
 /* Strokes and pixels glow from themselves */
-:root:not([data-theme="macintosh"]) :where(svg, canvas, img, hr) {
+:root:not([data-theme="macintosh"]) :where(svg, img, hr) {
   filter: drop-shadow(0 0 4px color-mix(in srgb, currentColor 55%, transparent));
 }
 
@@ -833,5 +839,29 @@ h1,
 @media (max-width: 640px) {
   .terminal-directory {
     width: min(100%, 21rem);
+  }
+
+  .directory-links a,
+  .directory-links button {
+    gap: 0.4rem;
+  }
+
+  .directory-links {
+    --directory-branch-offset: 1.2rem;
+    padding-left: 1.2rem;
+  }
+
+  .directory-links .directory-links {
+    --directory-branch-offset: 1.6rem;
+    margin-left: -0.3rem;
+    padding-left: 1.6rem;
+  }
+
+  .node-index {
+    width: 1.3rem;
+  }
+
+  .directory-entry .theme-current {
+    font-size: 0.7rem;
   }
 }
