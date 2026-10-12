@@ -73,7 +73,7 @@ function About() {
 
               <p>
                 I have a lot of different interests, but my primary areas of focus are in
-                machine learning, quantitative finance, and software development. You
+                machine/deep learning, quantitative finance, and data science. You
                 can find examples of my work in these areas in the{" "}
                 <Link
                   to="/projects"
@@ -86,12 +86,12 @@ function About() {
 
               <p>
                 Outside of that, I enjoy reading, sports (running,
-                weightlifting, hiking), playing chess and visual art. I
+                weightlifting, hiking), playing chess, and visual art. I
                 do competitive programming too.
               </p>
 
               <p>
-                I'm also a soldier. I serve in the Korean Army. I work in Artillery.
+                I'm also a soldier in the Korean Army. I work in Artillery.
               </p>
 
               <p>
