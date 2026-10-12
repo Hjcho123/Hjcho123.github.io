@@ -136,7 +136,7 @@ function Index() {
                   title="archive/"
                   entries={[
                     { label: "selected_projects/", to: "/projects" },
-                    { label: "blog/", to: "/blog" },
+                    { label: "write_ups/", to: "/blog" },
                     
                   ]}
                 />
