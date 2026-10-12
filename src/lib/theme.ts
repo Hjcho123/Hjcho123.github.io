@@ -1,17 +1,18 @@
 import { useSyncExternalStore } from "react";
 
 export const THEMES = [
+  { id: "S9", label: "Section_9" },
   { id: "macintosh", label: "Macintosh" },
   { id: "bios", label: "BIOS" },
   { id: "Arr", label: "Arrakis" },
-  { id: "S9", label: "Section_9" },
+  
   
 ] as const;
 
 export type ThemeId = (typeof THEMES)[number]["id"];
 
 const STORAGE_KEY = "site-theme";
-export const DEFAULT_THEME: ThemeId = "macintosh";
+export const DEFAULT_THEME: ThemeId = "S9";
 const listeners = new Set<() => void>();
 
 // Runs in <head> before first paint so the saved theme never flashes.
