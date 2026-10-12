@@ -1,10 +1,11 @@
 import { useSyncExternalStore } from "react";
 
 export const THEMES = [
-  { id: "bios", label: "BIOS" },
-  { id: "orange", label: "Dune" },
-  { id: "green", label: "Ghost in the Shell" },
   { id: "macintosh", label: "Macintosh" },
+  { id: "bios", label: "BIOS" },
+  { id: "Arr", label: "Arrakis" },
+  { id: "S9", label: "Section_9" },
+  
 ] as const;
 
 export type ThemeId = (typeof THEMES)[number]["id"];

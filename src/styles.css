@@ -80,7 +80,7 @@
 /* Themes differ by colour only. Each overrides the same tokens as the BIOS default above. */
 
 /* Amber CRT: orange on black, with alert red */
-:root[data-theme="orange"] {
+:root[data-theme="Arr"] {
   --background: #0a0603;
   --foreground: #ff8a1f;
   --card: #120a04;
@@ -109,33 +109,33 @@
   --canvas-ink: rgba(255, 138, 31, 0.9);
 }
 
-:root[data-theme="green"] {
+:root[data-theme="S9"] {
   --background: #030a08;
-  --foreground: #54f3ae;
+  --foreground: #a9f5db;
   --card: #06120e;
-  --card-foreground: #54f3ae;
+  --card-foreground: #a9f5db;
   --popover: #06120e;
-  --popover-foreground: #54f3ae;
-  --primary: #54f3ae;
+  --popover-foreground: #a9f5db;
+  --primary: #a9f5db;
   --primary-foreground: #030a08;
   --secondary: #08170f;
-  --secondary-foreground: #54f3ae;
+  --secondary-foreground: #a9f5db;
   --muted: #08170f;
-  --muted-foreground: #3fbf8a;
-  --accent: #54f3ae;
+  --muted-foreground: #93d092;
+  --accent: #a9f5db;
   --accent-foreground: #030a08;
   --destructive: #ff4d5e;
   --destructive-foreground: #030a08;
-  --border: #54f3ae;
+  --border: #a9f5db;
   --input: #0d3324;
-  --ring: #54f3ae;
+  --ring: #a9f5db;
   --paper: #050f0b;
   --on-ink: #030a08;
   --highlight: #f94730;
   --highlight-foreground: #030a08;
-  --link: #ff7a66;
+  --link: #e88d58;
   --canvas-bg: #030a08;
-  --canvas-ink: rgba(84, 243, 174, 0.9);
+  --canvas-ink: rgba(169, 245, 219, 0.9);
 }
 
 /* Scanlines and a soft vignette, all themes */
@@ -192,18 +192,18 @@ h1,
 
 /* Macintosh: black on white */
 :root[data-theme="macintosh"] {
-  --background: #dcdcdc;
+  --background: #ffffff;
   --foreground: #000000;
   --card: #ffffff;
   --card-foreground: #000000;
   --popover: #ffffff;
-  --popover-foreground: #000000;
+  --popover-foreground: #080809;
   --primary: #000000;
   --primary-foreground: #ffffff;
   --secondary: #ffffff;
   --secondary-foreground: #000000;
   --muted: #ffffff;
-  --muted-foreground: #333333;
+  --muted-foreground: #000000;
   --accent: #000000;
   --accent-foreground: #ffffff;
   --destructive: #000000;
@@ -215,7 +215,7 @@ h1,
   --on-ink: #ffffff;
   --highlight: #000000;
   --highlight-foreground: #ffffff;
-  --link: #000000;
+  --link: #000dff;
   --canvas-bg: #ffffff;
   --canvas-ink: rgba(1, 1, 1, 0.9);
 }
@@ -226,7 +226,7 @@ h1,
 }
 
 :root[data-theme="green"] {
-  --tree-color: #1f7a55;
+  --tree-color: #a9f5db;
 }
 
 .directory-entry .theme-current {
@@ -347,11 +347,10 @@ h1,
 }
 
 /* Tree lines */
-:root:not([data-theme="macintosh"]) .directory-links::before,
 :root:not([data-theme="macintosh"]) .directory-links > a::before,
 :root:not([data-theme="macintosh"]) .directory-links > button::before,
 :root:not([data-theme="macintosh"]) .directory-links > .directory-folder > summary::before {
-  filter: drop-shadow(0 0 3px var(--tree-line-color));
+  filter: drop-shadow(0 0 3px var(--connector-color));
 }
 
 /* Headings glow a little harder */
@@ -522,6 +521,10 @@ h1,
   --directory-border-color: var(--border);
   --tree-line-color: var(--tree-color, var(--directory-border-color));
   --tree-line-style: var(--tree-style, solid);
+  --directory-row-height: 1.25rem;
+  --directory-summary-indent: 0.2rem;
+  --node-index-width: 1.7rem;
+  --directory-child-indent: 1.8rem;
   border: 1px solid var(--directory-border-color);
   background: var(--paper);
   padding: 0.35rem 0.25rem 0.2rem;
@@ -540,7 +543,7 @@ h1,
 .directory-entry {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  line-height: 1.25rem;
+  line-height: var(--directory-row-height);
   color: var(--color-foreground);
 }
 
@@ -559,7 +562,7 @@ h1,
   list-style: none;
   cursor: pointer;
   user-select: none;
-  padding-left: 0.2rem;
+  padding-left: var(--directory-summary-indent);
   transition:
     background-color 120ms ease,
     color 120ms ease;
@@ -578,28 +581,17 @@ h1,
 }
 
 .directory-links {
-  --directory-branch-offset: 1.8rem;
+  --directory-branch-offset: var(--directory-child-indent);
   position: relative;
-  margin-top: 0.2rem;
-  padding-left: 1.8rem;
+  margin-left: var(--directory-summary-indent);
+  padding-left: var(--directory-branch-offset);
   border-left: 1px var(--tree-line-style) var(--tree-line-color);
 }
 
+/* Nested trunk hangs from the folder row's index column, children keep the same indent */
 .directory-links .directory-links {
-  --directory-branch-offset: 2.4rem;
-  position: relative;
-  margin-top: 0.2rem;
-  margin-left: -0.6rem;
-  padding-left: 2.4rem;
-}
-
-.directory-links .directory-links::before {
-  content: "";
-  position: absolute;
-  top: -0.825rem;
-  left: -1px;
-  height: 0.825rem;
-  border-left: 1px var(--tree-line-style) var(--tree-line-color);
+  --directory-branch-offset: calc(var(--directory-child-indent) - var(--node-index-width) / 2);
+  margin-left: calc(var(--node-index-width) / 2);
 }
 
 .directory-links a,
@@ -623,13 +615,14 @@ h1,
 .directory-links > a::before,
 .directory-links > button::before,
 .directory-links > .directory-folder > summary::before {
+  --connector-color: var(--tree-line-color);
   content: "";
   position: absolute;
-  top: 50%;
+  top: calc(50% - 0.5px);
   left: calc(-1 * var(--directory-branch-offset) - 1px);
   width: calc(var(--directory-branch-offset) + 1px);
   z-index: 2;
-  border-top: 1px var(--tree-line-style) var(--tree-line-color);
+  border-top: 1px var(--tree-line-style) var(--connector-color);
 }
 
 .directory-links > a:last-child::after,
@@ -639,14 +632,14 @@ h1,
   position: absolute;
   z-index: 1;
   left: calc(-1 * var(--directory-branch-offset) - 1px);
-  top: 50%;
+  top: calc(50% - 0.5px);
   bottom: 0;
   width: 1px;
   background: var(--paper);
 }
 
 .directory-links > .directory-folder:last-child::after {
-  top: 0.625rem;
+  top: calc(var(--directory-row-height) / 2 - 0.5px);
 }
 
 .directory-links a:hover,
@@ -662,10 +655,6 @@ h1,
   color: var(--highlight-foreground);
 }
 
-.directory-links > button:hover::before,
-.directory-links > button:focus-visible::before {
-  border-color: var(--highlight);
-}
 
 .directory-root-link {
   display: block;
@@ -783,7 +772,7 @@ h1,
 }
 
 .node-index {
-  width: 1.7rem;
+  width: var(--node-index-width);
   color: var(--color-muted-foreground);
   text-align: right;
   flex-shrink: 0;
@@ -801,7 +790,13 @@ h1,
 .directory-links > a:hover::before,
 .directory-links > .directory-folder > summary:hover::before,
 .directory-links > .directory-folder > summary:focus-visible::before {
-  border-color: var(--highlight);
+  --connector-color: var(--highlight);
+}
+
+.directory-links > a:focus-visible::before,
+.directory-links > button:hover::before,
+.directory-links > button:focus-visible::before {
+  --connector-color: var(--highlight);
 }
 
 .about-visual {
@@ -846,19 +841,9 @@ h1,
     gap: 0.4rem;
   }
 
-  .directory-links {
-    --directory-branch-offset: 1.2rem;
-    padding-left: 1.2rem;
-  }
-
-  .directory-links .directory-links {
-    --directory-branch-offset: 1.6rem;
-    margin-left: -0.3rem;
-    padding-left: 1.6rem;
-  }
-
-  .node-index {
-    width: 1.3rem;
+  .directory-panel {
+    --node-index-width: 1.3rem;
+    --directory-child-indent: 1.2rem;
   }
 
   .directory-entry .theme-current {
