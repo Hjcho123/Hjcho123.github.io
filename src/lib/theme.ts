@@ -4,14 +4,13 @@ export const THEMES = [
   { id: "bios", label: "BIOS" },
   { id: "orange", label: "Amber CRT" },
   { id: "green", label: "Green CRT" },
-  { id: "white", label: "White CRT" },
   { id: "macintosh", label: "Macintosh" },
 ] as const;
 
 export type ThemeId = (typeof THEMES)[number]["id"];
 
 const STORAGE_KEY = "site-theme";
-const DEFAULT_THEME: ThemeId = "bios";
+export const DEFAULT_THEME: ThemeId = "macintosh";
 const listeners = new Set<() => void>();
 
 // Runs in <head> before first paint so the saved theme never flashes.

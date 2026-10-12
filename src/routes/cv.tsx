@@ -69,7 +69,7 @@ function CV() {
   
               Cho
             </h1>
-            <div className="mt-10 space-y-1 border-l border-accent pl-5 text-sm text-muted-foreground">
+            <div className="mt-10 space-y-1 border-l border-highlight pl-5 text-sm text-muted-foreground">
               <p>BSc Mathematics with an Extension in AI</p>
               <p>Hong Kong University of Science and Technology</p>
               <a
@@ -100,7 +100,7 @@ function CV() {
                 key={item.role + item.range}
                 className="grid gap-3 border-b border-dotted border-border py-7 sm:grid-cols-[7rem_1fr]"
               >
-                <span className="font-mono text-[0.7rem] text-accent">
+                <span className="font-mono text-[0.7rem] text-highlight">
                   {item.range}
                 </span>
 

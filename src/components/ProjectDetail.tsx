@@ -120,7 +120,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
             </div>
           </div>
 
-          <aside className="border-l-2 border-accent pl-5 lg:mt-14">
+          <aside className="border-l-2 border-highlight pl-5 lg:mt-14">
             <p className="label">Storage note</p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Files are staged in this browser session only. Connect a storage service later to make uploads persistent.

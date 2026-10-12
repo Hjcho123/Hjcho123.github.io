@@ -30,4 +30,5 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   base,
+  server: { host: true, allowedHosts: [".app.github.dev"] },
 });

@@ -64,9 +64,9 @@
   --ring: #ffffff;
   --paper: #0000aa;
   --on-ink: #0000aa;
-  --highlight: #00aaaa;
+  --highlight: #f13f3f;
   --highlight-foreground: #000000;
-  --link: #ffff55;
+  --link: #f1f100;
   --canvas-bg: #00005a;
   --canvas-ink: rgba(232, 232, 232, 0.9);
   --body-pattern: none;
@@ -102,40 +102,40 @@
   --ring: #ff8a1f;
   --paper: #0f0804;
   --on-ink: #0a0603;
-  --highlight: #e8241c;
+  --highlight: #1ce8bc;
   --highlight-foreground: #0a0603;
-  --link: #ff5a36;
+  --link: #5ff5d6;
   --canvas-bg: #0a0603;
   --canvas-ink: rgba(255, 138, 31, 0.9);
 }
 
 :root[data-theme="green"] {
   --background: #030a08;
-  --foreground: #4dffb0;
+  --foreground: #54f3ae;
   --card: #06120e;
-  --card-foreground: #4dffb0;
+  --card-foreground: #54f3ae;
   --popover: #06120e;
-  --popover-foreground: #4dffb0;
-  --primary: #4dffb0;
+  --popover-foreground: #54f3ae;
+  --primary: #54f3ae;
   --primary-foreground: #030a08;
   --secondary: #08170f;
-  --secondary-foreground: #4dffb0;
+  --secondary-foreground: #54f3ae;
   --muted: #08170f;
-  --muted-foreground: #2fa877;
-  --accent: #4dffb0;
+  --muted-foreground: #3fbf8a;
+  --accent: #54f3ae;
   --accent-foreground: #030a08;
   --destructive: #ff4d5e;
   --destructive-foreground: #030a08;
-  --border: #1f7a55;
+  --border: #54f3ae;
   --input: #0d3324;
-  --ring: #4dffb0;
+  --ring: #54f3ae;
   --paper: #050f0b;
   --on-ink: #030a08;
-  --highlight: #4dffb0;
+  --highlight: #f94730;
   --highlight-foreground: #030a08;
-  --link: #5ee6ff;
+  --link: #ff7a66;
   --canvas-bg: #030a08;
-  --canvas-ink: rgba(77, 255, 176, 0.9);
+  --canvas-ink: rgba(84, 243, 174, 0.9);
 }
 
 /* Scanlines and a soft vignette, all themes */
@@ -146,7 +146,13 @@ body::after {
   z-index: 100;
   pointer-events: none;
   background:
-    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.22) 0, rgba(0, 0, 0, 0.22) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.22) 0,
+      rgba(0, 0, 0, 0.22) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
     radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.45) 100%);
 }
 
@@ -158,7 +164,13 @@ h1,
 
 :root[data-theme="macintosh"] body::after {
   background:
-    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 0, rgba(0, 0, 0, 0.07) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.07) 0,
+      rgba(0, 0, 0, 0.07) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
     radial-gradient(ellipse at center, transparent 70%, rgba(0, 0, 0, 0.14) 100%);
 }
 
@@ -205,37 +217,7 @@ h1,
   --highlight-foreground: #ffffff;
   --link: #000000;
   --canvas-bg: #ffffff;
-  --canvas-ink: rgba(169, 212, 191, 0.9);
-}
-
-/* White CRT: cool white phosphor */
-:root[data-theme="white"] {
-  --background: #07090b;
-  --foreground: #dfe8ef;
-  --card: #0a0d10;
-  --card-foreground: #dfe8ef;
-  --popover: #0a0d10;
-  --popover-foreground: #dfe8ef;
-  --primary: #dfe8ef;
-  --primary-foreground: #07090b;
-  --secondary: #10151a;
-  --secondary-foreground: #dfe8ef;
-  --muted: #10151a;
-  --muted-foreground: #8a98a4;
-  --accent: #dfe8ef;
-  --accent-foreground: #07090b;
-  --destructive: #ff6b6b;
-  --destructive-foreground: #07090b;
-  --border: #5a6872;
-  --input: #26303a;
-  --ring: #dfe8ef;
-  --paper: #0a0d10;
-  --on-ink: #07090b;
-  --highlight: #dfe8ef;
-  --highlight-foreground: #07090b;
-  --link: #9fd0ff;
-  --canvas-bg: #07090b;
-  --canvas-ink: rgba(169, 212, 191, 0.9);
+  --canvas-ink: rgba(1, 1, 1, 0.9);
 }
 
 /* Tree line character per theme: System 6 dotted rules, dim phosphor on Green CRT */
@@ -249,6 +231,191 @@ h1,
 
 .directory-entry .theme-current {
   opacity: 0.75;
+}
+
+/*
+ * Sci-fi glow system (every theme except Macintosh).
+ * One rule: a glow is always drawn in the colour of the thing it comes from.
+ *   text         -> text-shadow in currentColor (set on every element so none inherits another's colour)
+ *   borders      -> box-shadow in the border colour, only on the sides that have a border
+ *   filled areas -> box-shadow in the fill colour; the dark text on them gets no glow
+ *   tree lines   -> drop-shadow in the tree line colour
+ * Colour roles per theme: --foreground (primary), --highlight (accent), --link (accent text), --border (frames).
+ */
+:root:not([data-theme="macintosh"]) {
+  --glow-text: 0 0 6px;
+  --glow-edge: color-mix(in srgb, var(--border) 70%, transparent);
+  --glow-accent: color-mix(in srgb, var(--highlight) 70%, transparent);
+  scrollbar-color: var(--foreground) var(--background);
+}
+
+:root:not([data-theme="macintosh"]) *,
+:root:not([data-theme="macintosh"]) *::before,
+:root:not([data-theme="macintosh"]) *::after {
+  text-shadow: var(--glow-text) color-mix(in srgb, currentColor 60%, transparent);
+}
+
+/* Strokes and pixels glow from themselves */
+:root:not([data-theme="macintosh"]) :where(svg, canvas, img, hr) {
+  filter: drop-shadow(0 0 4px color-mix(in srgb, currentColor 55%, transparent));
+}
+
+/* Full borders */
+:root:not([data-theme="macintosh"])
+  :where(
+    .border,
+    .panel,
+    .directory-panel,
+    .about-visual,
+    .about-visual-grid span,
+    .tree-parameter input,
+    input,
+    textarea,
+    select
+  ) {
+  box-shadow:
+    0 0 8px var(--glow-edge),
+    inset 0 0 8px color-mix(in srgb, var(--border) 18%, transparent);
+}
+
+/* Only solid horizontal rules glow. Vertical and dotted borders stay flat. */
+:root:not([data-theme="macintosh"])
+  :where(.border-t-2:not(.border-dotted), .border-b-2:not(.border-dotted)) {
+  box-shadow: none;
+}
+
+:root:not([data-theme="macintosh"]) :where(.border-t-2:not(.border-dotted)) {
+  box-shadow: 0 -4px 6px -4px var(--glow-edge);
+}
+
+:root:not([data-theme="macintosh"]) :where(.border-b-2:not(.border-dotted)) {
+  box-shadow: 0 4px 6px -4px var(--glow-edge);
+}
+
+:root:not([data-theme="macintosh"]) :where(.border-y-2) {
+  box-shadow:
+    0 -4px 6px -4px var(--glow-edge),
+    0 4px 6px -4px var(--glow-edge);
+}
+
+/* Accent rules glow in the accent colour */
+:root:not([data-theme="macintosh"]) .tree-parameter::after {
+  box-shadow: 0 0 8px var(--glow-edge);
+}
+
+:root:not([data-theme="macintosh"]) .panel {
+  background-image: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--foreground) 8%, transparent),
+    transparent 45%
+  );
+  position: relative;
+}
+
+/* HUD corner brackets */
+:root:not([data-theme="macintosh"]) .panel::before,
+:root:not([data-theme="macintosh"]) .panel::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  border: 2px solid var(--border);
+  box-shadow: none;
+  text-shadow: none;
+  filter: drop-shadow(0 0 4px var(--border));
+}
+
+:root:not([data-theme="macintosh"]) .panel::before {
+  top: -3px;
+  left: -3px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+:root:not([data-theme="macintosh"]) .panel::after {
+  right: -3px;
+  bottom: -3px;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* Tree lines */
+:root:not([data-theme="macintosh"]) .directory-links::before,
+:root:not([data-theme="macintosh"]) .directory-links > a::before,
+:root:not([data-theme="macintosh"]) .directory-links > button::before,
+:root:not([data-theme="macintosh"]) .directory-links > .directory-folder > summary::before {
+  filter: drop-shadow(0 0 3px var(--tree-line-color));
+}
+
+/* Headings glow a little harder */
+:root:not([data-theme="macintosh"]) :is(h1, .page-title, .terminal-name) {
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 4px color-mix(in srgb, currentColor 70%, transparent),
+    0 0 16px color-mix(in srgb, currentColor 45%, transparent);
+}
+
+:root:not([data-theme="macintosh"]) :is(a, .directory-entry):hover {
+  text-shadow: 0 0 8px currentColor;
+}
+
+/* Filled highlight surfaces: glow from the fill, not from the dark text on top */
+:root:not([data-theme="macintosh"]) .directory-links a:hover,
+:root:not([data-theme="macintosh"]) .directory-links button:hover,
+:root:not([data-theme="macintosh"]) .directory-links button:focus-visible,
+:root:not([data-theme="macintosh"]) .directory-root-link:hover,
+:root:not([data-theme="macintosh"]) .directory-folder > summary:hover,
+:root:not([data-theme="macintosh"]) .directory-folder > summary:focus-visible,
+:root:not([data-theme="macintosh"]) .bg-highlight,
+:root:not([data-theme="macintosh"]) .hover\:bg-highlight:hover {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--highlight) 65%, transparent);
+}
+
+:root:not([data-theme="macintosh"]) .directory-links a:hover,
+:root:not([data-theme="macintosh"]) .directory-links button:hover,
+:root:not([data-theme="macintosh"]) .directory-links button:focus-visible,
+:root:not([data-theme="macintosh"]) .directory-root-link:hover,
+:root:not([data-theme="macintosh"]) .directory-folder > summary:hover,
+:root:not([data-theme="macintosh"]) .directory-folder > summary:focus-visible,
+:root:not([data-theme="macintosh"]) .bg-highlight,
+:root:not([data-theme="macintosh"]) .hover\:bg-highlight:hover,
+:root:not([data-theme="macintosh"]) .directory-links a:hover *,
+:root:not([data-theme="macintosh"]) .directory-links button:hover *,
+:root:not([data-theme="macintosh"]) .directory-links button:focus-visible *,
+:root:not([data-theme="macintosh"]) .directory-root-link:hover *,
+:root:not([data-theme="macintosh"]) .directory-folder > summary:hover *,
+:root:not([data-theme="macintosh"]) .directory-folder > summary:focus-visible *,
+:root:not([data-theme="macintosh"]) .bg-highlight *,
+:root:not([data-theme="macintosh"]) .hover\:bg-highlight:hover * {
+  text-shadow: none;
+}
+
+:root:not([data-theme="macintosh"]) .directory-label,
+:root:not([data-theme="macintosh"]) .bg-primary,
+:root:not([data-theme="macintosh"]) .bg-foreground,
+:root:not([data-theme="macintosh"]) .hover\:bg-primary\/90:hover,
+:root:not([data-theme="macintosh"]) .hover\:bg-foreground:hover,
+:root:not([data-theme="macintosh"]) .hover\:bg-accent:hover,
+:root:not([data-theme="macintosh"]) .about-visual-grid span.filled {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--foreground) 65%, transparent);
+}
+
+:root:not([data-theme="macintosh"]) .directory-label,
+:root:not([data-theme="macintosh"]) .bg-primary,
+:root:not([data-theme="macintosh"]) .bg-foreground,
+:root:not([data-theme="macintosh"]) .hover\:bg-primary\/90:hover,
+:root:not([data-theme="macintosh"]) .hover\:bg-foreground:hover,
+:root:not([data-theme="macintosh"]) .hover\:bg-accent:hover,
+:root:not([data-theme="macintosh"]) .about-visual-grid span.filled,
+:root:not([data-theme="macintosh"]) .directory-label *,
+:root:not([data-theme="macintosh"]) .bg-primary *,
+:root:not([data-theme="macintosh"]) .bg-foreground *,
+:root:not([data-theme="macintosh"]) .hover\:bg-primary\/90:hover *,
+:root:not([data-theme="macintosh"]) .hover\:bg-foreground:hover *,
+:root:not([data-theme="macintosh"]) .hover\:bg-accent:hover *,
+:root:not([data-theme="macintosh"]) .about-visual-grid span.filled * {
+  text-shadow: none;
 }
 
 @layer base {
@@ -387,7 +554,9 @@ h1,
   cursor: pointer;
   user-select: none;
   padding-left: 0.2rem;
-  transition: background-color 120ms ease, color 120ms ease;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
 }
 
 .directory-links > .directory-folder > summary {
@@ -440,7 +609,9 @@ h1,
   text-align: left;
   cursor: pointer;
   color: var(--color-foreground);
-  transition: background-color 120ms ease, color 120ms ease;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
 }
 
 .directory-links > a::before,
@@ -494,7 +665,9 @@ h1,
   display: block;
   margin-top: 0;
   padding: 0.12rem 0 0.12rem 0.2rem;
-  transition: background-color 120ms ease, color 120ms ease;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
 }
 
 .directory-root-link:hover {
