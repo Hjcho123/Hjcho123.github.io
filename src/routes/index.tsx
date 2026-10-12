@@ -149,7 +149,7 @@ function Index() {
                         { label: "github", to: "https://github.com/Hjcho123", external: true },
                         {
                           label: "linkedin",
-                          to: "https://www.linkedin.com/in/heejae-cho/",
+                          to: "https://www.linkedin.com/in/heejae-cho123/",
                           external: true,
                         },
                         { label: "email", to: "mailto:hjchoaa@connect.ust.hk", external: true },
@@ -158,7 +158,7 @@ function Index() {
                     {
                       label: "social_media/",
                       children: [
-                        { label: "instagram", to: "https://www.instagram.com/", external: true },
+                        { label: "instagram", to: "https://www.instagram.com/hijae_cho/", external: true },
                       ],
                     },
                   ]}
