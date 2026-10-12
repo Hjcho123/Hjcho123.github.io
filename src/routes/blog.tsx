@@ -30,10 +30,10 @@ function Blog() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="title-block pt-8">
           <p className="label">./home/heejae/archive/blog</p>
-          <h1 className="page-title mt-7">blog</h1>
+          <h1 className="page-title mt-7">write_ups</h1>
           <div className="title-rule mt-10" />
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            An online diary and study log.
+            General write-ups on topics I find interesting.
           </p>
         </div>
 
