@@ -110,7 +110,7 @@ function Index() {
           
           <p className="mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
             {[
-              "navigate using the directory below ",
+              "select a directory to begin",
             
             ].map((interest, index) => (
               <span key={interest} className="inline-flex items-center gap-3">
