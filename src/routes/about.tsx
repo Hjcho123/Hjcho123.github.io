@@ -73,7 +73,7 @@ function About() {
 
               <p>
                 I have a lot of different interests, but my primary areas of focus are in
-                machine/deep learning, quantitative development/trading, and data science. You
+                machine/deep learning, quantitative development/trading, data science, and software engineering. You
                 can find examples of my work in these areas in the{" "}
                 <Link
                   to="/projects"
