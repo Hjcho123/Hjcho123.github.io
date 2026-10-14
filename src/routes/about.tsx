@@ -73,7 +73,7 @@ function About() {
 
               <p>
                 I have a lot of different interests, but my primary areas of focus are in
-                machine/deep learning, quantitative finance, and data science. You
+                machine/deep learning, quantitative development/trading, and data science. You
                 can find examples of my work in these areas in the{" "}
                 <Link
                   to="/projects"
@@ -85,9 +85,12 @@ function About() {
               </p>
 
               <p>
-                Outside of that, I enjoy reading, sports (running,
-                weightlifting, hiking), playing chess, and visual art. I
-                do competitive programming too.
+                I'm also a competitive programmer. I'm most active on AtCoder, in both the Algorithmic and Heuristic tracks.
+              </p>
+
+              <p>
+                Outside of all that, I enjoy sports (running,
+                weightlifting, hiking), reading novels, and visual art. 
               </p>
 
               <p>
